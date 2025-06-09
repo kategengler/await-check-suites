@@ -59,8 +59,8 @@ See [action.yml](action.yml)
 ## Scenarios
 
 - [Wait for other check suites on this commit to complete](#wait-for-other-check-suites-on-this-commit-to-complete)
-- [Wait for all check suites on a commit in another repository to complete](#Wait-for-all-check-suites-on-a-commit-in-another-repo-to-complete)
-- [Wait for the first GitHub Actions check suite on this commit to complete](#Wait-for-the-first-GitHub-Actions-check-suite-on-this-commit-to-complete)
+- [Wait for all check suites on a commit in another repository to complete](#wait-for-all-check-suites-on-a-commit-in-another-repo-to-complete)
+- [Wait for the first GitHub Actions check suite on this commit to complete](#wait-for-the-first-GitHub-Actions-check-suite-on-this-commit-to-complete)
 
 ### Wait for other check suites on this commit to complete
 
@@ -96,7 +96,7 @@ npm install
 npm run all
 ```
 
-# License
+## License
 
 The scripts and documentation in this project are released under the
 [MIT License](LICENSE)
