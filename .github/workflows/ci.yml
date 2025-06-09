@@ -106,7 +106,7 @@ jobs:
           git checkout --orphan race_condition_test
           mkdir -p .github/workflows
           cp ../race_condition_test/.github/workflows/race_condition_test.yml .github/workflows/
-          echo $(date +%s) > trigger_workflow.txt
+          date +%s > trigger_workflow.txt
           git add .
           git config --global user.name "GitHub Actions"
           git config --global user.email "githubactions@example.com"
