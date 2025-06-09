@@ -8,7 +8,7 @@ Updated from
 ![CI](https://github.com/actions/kategengler/await-check-suites/workflows/ci.yml/badge.svg)
 [![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
 
-# Usage
+## Usage
 
 See [action.yml](action.yml)
 
@@ -56,19 +56,19 @@ See [action.yml](action.yml)
     onlyFirstCheckSuite: ''
 ```
 
-# Scenarios
+## Scenarios
 
-- [Wait for other check suites on this commit to complete](#Wait-for-other-check-suites-on-this-commit-to-complete)
-- [Wait for all check suites on a commit in another repo to complete](#Wait-for-all-check-suites-on-a-commit-in-another-repo-to-complete)
+- [Wait for other check suites on this commit to complete](#wait-for-other-check-suites-on-this-commit-to-complete)
+- [Wait for all check suites on a commit in another repository to complete](#Wait-for-all-check-suites-on-a-commit-in-another-repo-to-complete)
 - [Wait for the first GitHub Actions check suite on this commit to complete](#Wait-for-the-first-GitHub-Actions-check-suite-on-this-commit-to-complete)
 
-## Wait for other check suites on this commit to complete
+### Wait for other check suites on this commit to complete
 
 ```yaml
 - uses: kategengler/await-check-suites@v1
 ```
 
-## Wait for all check suites on a commit in another repo to complete
+### Wait for all check suites on a commit in another repository to complete
 
 ```yaml
 - uses: kategengler/await-check-suites@v1
@@ -78,7 +78,7 @@ See [action.yml](action.yml)
     token: ${{ secrets.GITHUB_PAT }}
 ```
 
-## Wait for the first GitHub Actions check suite on this commit to complete
+### Wait for the first GitHub Actions check suite on this commit to complete
 
 ```yaml
 - uses: kategengler/await-check-suites@v1
@@ -87,13 +87,13 @@ See [action.yml](action.yml)
     onlyFirstCheckSuite: true
 ```
 
-# Install, Build, Lint, Test, and Package
+## Install, Build, Lint, Test, and Package
 
 Make sure to do the following before checking in any code changes.
 
 ```bash
-$ npm install
-$ npm run all
+npm install
+npm run all
 ```
 
 # License
