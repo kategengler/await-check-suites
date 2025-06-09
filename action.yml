@@ -1,5 +1,5 @@
-name: Await Check Suite
-description: Wait for a commit's check suites to complete
+name: Wait for Check Suites
+description: Wait for check suites on a ref to complete
 author: Katie Gengler
 branding:
   icon: watch
@@ -10,7 +10,7 @@ inputs:
   repository:
     description: >
       The commit's repository name with owner. For example,
-      `kategengler/await-check-suites`.
+      `kategengler/wait-for-check-suitess`.
     required: true
     default: ${{ github.repository }}
   ref:

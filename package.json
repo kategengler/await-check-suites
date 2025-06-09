@@ -1,17 +1,17 @@
 {
-  "name": "await-check-suite",
+  "name": "wait-for-check-suites",
   "description": "GitHub action that waits for a commit's check suites to complete",
   "version": "0.0.0",
   "author": "",
   "type": "module",
   "private": true,
-  "homepage": "https://github.com/kategengler/await-check-suites",
+  "homepage": "https://github.com/kategengler/wait-for-check-suitess",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kategengler/await-check-suites.git"
+    "url": "git+https://github.com/kategengler/wait-for-check-suitess.git"
   },
   "bugs": {
-    "url": "https://github.com/kategengler/await-check-suites/issues"
+    "url": "https://github.com/kategengler/wait-for-check-suitess/issues"
   },
   "keywords": [
     "actions",

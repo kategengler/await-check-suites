@@ -1,11 +1,11 @@
-# Await Check Suite
+# Wait for Check Suites
 
 Wait for a commit's check suites to complete.
 
 Updated from
 [jitterbit/await-check-suites](https://github.com/jitterbit/await-check-suites).
 
-![CI](https://github.com/actions/kategengler/await-check-suites/workflows/ci.yml/badge.svg)
+![CI](https://github.com/actions/kategengler/wait-for-check-suitess/workflows/ci.yml/badge.svg)
 [![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
 
 ## Usage
@@ -13,10 +13,10 @@ Updated from
 See [action.yml](action.yml)
 
 ```yaml
-- uses: kategengler/await-check-suites@v1
+- uses: kategengler/wait-for-check-suitess@v1
   with:
     # The commit's repository name with owner.
-    # For example, kategengler/await-check-suites.
+    # For example, kategengler/wait-for-check-suitess.
     # Default: ${{ github.repository }}
     repository: ''
 
@@ -65,13 +65,13 @@ See [action.yml](action.yml)
 ### Wait for other check suites on this commit to complete
 
 ```yaml
-- uses: kategengler/await-check-suites@v1
+- uses: kategengler/wait-for-check-suitess@v1
 ```
 
 ### Wait for all check suites on a commit in another repository to complete
 
 ```yaml
-- uses: kategengler/await-check-suites@v1
+- uses: kategengler/wait-for-check-suitess@v1
   with:
     repository: kategengler/git-ops
     ref: ${{ env.git_ops_commit_sha }}
@@ -81,7 +81,7 @@ See [action.yml](action.yml)
 ### Wait for the first GitHub Actions check suite on this commit to complete
 
 ```yaml
-- uses: kategengler/await-check-suites@v1
+- uses: kategengler/wait-for-check-suitess@v1
   with:
     appSlugFilter: github-actions
     onlyFirstCheckSuite: true
