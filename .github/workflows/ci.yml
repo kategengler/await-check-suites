@@ -57,8 +57,69 @@ jobs:
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
+          appSlugFilter: github-actions
+          waitForACheckSuite: false
 
       - name: Print Output
         id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+        run: echo "${{ steps.test-action.outputs.conclusion }}"
+
+  onlyFirstCheckSuite_test:
+    name: onlyFirstCheckSuite test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run the action
+        id: test-action
+        uses: ./
+        with:
+          appSlugFilter: github-actions
+          onlyFirstCheckSuite: true
+          waitForACheckSuite: false
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.test-action.outputs.conclusion }}"
+
+  race_condition_test:
+    name: Race condition test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout race_condition_test branch
+        uses: actions/checkout@v4
+        with:
+          ref: race_condition_test
+          token: ${{ secrets.GH_TOKEN }}
+          path: race_condition_test
+
+      - name: Make a commit to the race_condition_test branch
+        env:
+          GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+        run: |
+          mkdir new_race_condition_test
+          cd new_race_condition_test
+          git init .
+          git checkout --orphan race_condition_test
+          mkdir -p .github/workflows
+          cp ../race_condition_test/.github/workflows/race_condition_test.yml .github/workflows/
+          echo $(date +%s) > trigger_workflow.txt
+          git add .
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "githubactions@example.com"
+          git commit -m "test: trigger race_condition_test workflow"
+          git push --quiet --force "https://$GITHUB_PAT@github.com/${GITHUB_REPOSITORY}.git" race_condition_test
+
+      - name: Wait for the commit's check suite(s) to complete
+        id: await
+        uses: ./
+        with:
+          ref: race_condition_test
+          appSlugFilter: github-actions
+
+      - name: Get conclusion of the commit's check suite(s)
+        run: |
+          echo "Conclusion: ${{ steps.await.outputs.conclusion }}"

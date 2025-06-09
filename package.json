@@ -1,20 +1,22 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
+  "name": "await-check-suite",
+  "description": "GitHub action that waits for a commit's check suites to complete",
   "version": "0.0.0",
   "author": "",
   "type": "module",
   "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
+  "homepage": "https://github.com/kategengler/await-check-suites",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/kategengler/await-check-suites.git"
   },
   "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
+    "url": "https://github.com/kategengler/await-check-suites/issues"
   },
   "keywords": [
-    "actions"
+    "actions",
+    "GitHub",
+    "check suites"
   ],
   "exports": {
     ".": "./dist/index.js"
@@ -37,12 +39,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.9",
     "@github/local-action": "^3.2.1",
     "@jest/globals": "^29.7.0",
+    "@octokit/plugin-rest-endpoint-methods": "^16.0.0",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.1",
@@ -57,6 +61,7 @@
     "eslint-plugin-jest": "^28.12.0",
     "eslint-plugin-prettier": "^5.4.1",
     "jest": "^29.7.0",
+    "jest-mock": "^30.0.0-beta.3",
     "make-coverage-badge": "^1.2.0",
     "prettier": "^3.5.3",
     "prettier-eslint": "^16.4.2",
